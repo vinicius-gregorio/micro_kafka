@@ -12,6 +12,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/vinicius-gregorio/balance-api/database"
 	"github.com/vinicius-gregorio/balance-api/entity"
+	"github.com/vinicius-gregorio/balance-api/web_client"
 )
 
 func main() {
@@ -43,6 +44,14 @@ func main() {
 			break // Exit the loop if successfully subscribed
 		}
 	}
+
+	// Start the web server
+	balanceDB := database.NewBalanceDB(db)
+	if balanceDB == nil {
+		log.Fatal("Failed to initialize balance database")
+	}
+	server := web_client.NewServer(balanceDB)
+	go server.Start()
 
 	run := true
 	for run {
