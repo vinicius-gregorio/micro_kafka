@@ -11,7 +11,9 @@ Check if all services are up
 `docker-compose ps` (-a flag if wanted)
 
 You should see something like this:
-bash```
+
+
+```
 control-center                          /etc/confluent/docker/run        Up      0.0.0.0:9021->9021/tcp
 kafka                                   /etc/confluent/docker/run        Up      0.0.0.0:9092->9092/tcp
 microservices_challenge_balance-app_1   /usr/local/bin/entrypoint. ...   Up      0.0.0.0:3003->3003/tcp
