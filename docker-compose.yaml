@@ -20,8 +20,8 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - .docker/mysql:/var/lib/mysql
-      - ./fc_walletcore/init_data.sql:/docker-entrypoint-initdb.d/init_data.sql
+      # - .docker/mysql:/var/lib/mysql
+      - ./init_data.sql:/docker-entrypoint-initdb.d/init_data.sql
    
 
   zookeeper:

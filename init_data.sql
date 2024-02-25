@@ -3,6 +3,8 @@
 
 CREATE DATABASE IF NOT EXISTS wallet;
 
+-- Balance microservice
+CREATE DATABASE IF NOT EXISTS wallet_balance;
 
 -- Switch to the wallet database
 USE wallet;
@@ -54,6 +56,21 @@ INSERT INTO clients (id, name, email, created_at) VALUES ('3', 'Rocambole', 'roc
 INSERT INTO accounts (id, client_id, balance, created_at) VALUES ('1', '1', 100.00, CURRENT_TIMESTAMP);
 INSERT INTO accounts (id, client_id, balance, created_at) VALUES ('2', '1', 200.00, CURRENT_TIMESTAMP);
 INSERT INTO accounts (id, client_id, balance, created_at) VALUES ('3', '2', 300.00, CURRENT_TIMESTAMP);
-INSERT INTO accounts (id, client_id, balance, created_at) VALUES ('1', '2', 100.00, CURRENT_TIMESTAMP);
-INSERT INTO accounts (id, client_id, balance, created_at) VALUES ('2', '3', 200.00, CURRENT_TIMESTAMP);
-INSERT INTO accounts (id, client_id, balance, created_at) VALUES ('3', '3', 300.00, CURRENT_TIMESTAMP);
+INSERT INTO accounts (id, client_id, balance, created_at) VALUES ('4', '2', 100.00, CURRENT_TIMESTAMP);
+INSERT INTO accounts (id, client_id, balance, created_at) VALUES ('5', '3', 200.00, CURRENT_TIMESTAMP);
+INSERT INTO accounts (id, client_id, balance, created_at) VALUES ('6', '3', 300.00, CURRENT_TIMESTAMP);
+
+
+
+
+
+
+-- Balance microservice
+
+USE wallet_balance;
+
+CREATE TABLE IF NOT EXISTS balances (
+    account_id varchar(255),
+    amount float
+);
+
