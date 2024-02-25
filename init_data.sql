@@ -74,3 +74,9 @@ CREATE TABLE IF NOT EXISTS balances (
     amount float
 );
 
+INSERT INTO balances (account_id, amount) VALUES ('1', 100.00);
+INSERT INTO balances (account_id, amount) VALUES ('2', 200.00);
+INSERT INTO balances (account_id, amount) VALUES ('3', 300.00);
+INSERT INTO balances (account_id, amount) VALUES ('4', 100.00);
+INSERT INTO balances (account_id, amount) VALUES ('5', 200.00);
+INSERT INTO balances (account_id, amount) VALUES ('6', 300.00);
